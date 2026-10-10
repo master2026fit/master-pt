@@ -1,5 +1,5 @@
 // MASTER PT: network-first HTML, offline fallback; no manual cache version edits.
-const CACHE = 'master-pt-app-shell-v1-9-21';
+const CACHE = 'master-pt-app-shell-v1-9-23';
 const SHELL = ['./index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png'];
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
