@@ -1,2 +1,1 @@
-MASTER PT v1.9.4 OCR numeric-region test
-Existing local data is preserved. Do not uninstall or clear browser data. OCR does not automatically change saved or input values.
+MASTER PT v1.9.5 숫자 직접 지정 OCR 시험판\n사진에서 체중/골격근량/체지방률 숫자를 순서대로 눌러 진단합니다. 기존 기록 유지, 자동 입력 및 자동 저장 없음.\n
