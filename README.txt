@@ -1,1 +1,1 @@
-MASTER PT v1.9.19: 날짜 OCR을 6개 이미지 영역, 원본/고대비 총 12회 검사. 2회 이상 일치할 때만 날짜 자동 입력. 날짜 후보는 원본 확인 후 선택. 기존 저장기록 유지. 기존 앱 삭제 및 데이터 초기화 금지.\n
+MASTER PT v1.9.20: v1.9.19 JavaScript regular expression syntax error fixed. Do not uninstall app or clear data.
