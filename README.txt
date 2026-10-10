@@ -1,1 +1,1 @@
-MASTER PT v1.9.1 인바디 OCR 위치 보정 시험판. 기존 앱 삭제/저장공간 초기화 금지. 실제 기기 OCR 검증 전.
+MASTER PT v1.9.2 OCR multi-photo test. Back up records before updating. Never clear app storage. OCR results require visual confirmation.
