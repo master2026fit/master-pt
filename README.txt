@@ -1,1 +1,1 @@
-MASTER PT v1.9.20: v1.9.19 JavaScript regular expression syntax error fixed. Do not uninstall app or clear data.
+MASTER PT v1.9.21 - InBody 270S header date OCR targeted fix. Upload all 6 files to repository root. Do not clear app data.
