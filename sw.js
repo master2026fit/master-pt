@@ -41,3 +41,4 @@ self.addEventListener('fetch', event => {
     try {return await fetch(request)} catch(err) {return Response.error()}
   })());
 });
+// MASTER PT v1.6 deployment revision

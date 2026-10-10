@@ -1,1 +1,1 @@
-MASTER PT v1.4: 휴식 종료 소리 + 인바디 사진 OCR 시험 기능. GitHub 저장소 루트에 index.html, sw.js 및 아이콘/manifest 업로드. OCR은 인터넷 연결이 필요하며 외부 CDN에서 Tesseract.js를 받아 기기에서 분석. 사진/인식 글자는 서버에 업로드하지 않도록 구현했으나 CDN 라이브러리 로드가 필요. 숫자 확인 후 저장. 브라우저 절전시 소리 제한 가능.
+MASTER PT v1.6: conservative InBody OCR; permission-based best-effort notification. Static PWA cannot guarantee on-time background notifications. Existing local data key preserved.
