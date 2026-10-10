@@ -1,1 +1,6 @@
-MASTER PT v1.6: conservative InBody OCR; permission-based best-effort notification. Static PWA cannot guarantee on-time background notifications. Existing local data key preserved.
+MASTER PT v1.7 FREE INBODY ANALYSIS
+- 기존 저장 키 및 운동 데이터 유지
+- 인바디 저장 기록 분석: 변화량, 목표 차이, 운동 방향
+- 측정일은 사용자가 직접 확인 및 수정 (OCR 날짜 자동확정 안 함)
+- OCR 미확인 수치는 빈칸, 수동 확인 후 저장
+- 다른 앱 사용 중 정확한 백그라운드 알림은 여전히 미지원
