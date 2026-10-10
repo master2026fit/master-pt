@@ -1,1 +1,1 @@
-MASTER PT v1.9.2 OCR multi-photo test. Back up records before updating. Never clear app storage. OCR results require visual confirmation.
+v1.9.3 OCR diagnostic only. Does not autofill or modify records. Backup before deploying.
