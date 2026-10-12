@@ -1,26 +1,44 @@
-const CACHE='today-prayer-v2-0';
-const ASSETS=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
-
-self.addEventListener('install',e=>{
-  e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting()));
+// MASTER PT: network-first HTML, offline fallback; no manual cache version edits.
+const CACHE = 'master-pt-app-shell-v1-9-23';
+const SHELL = ['./index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png'];
+self.addEventListener('install', event => {
+  event.waitUntil((async () => {
+    const cache = await caches.open(CACHE);
+    await cache.addAll(SHELL);
+    await self.skipWaiting();
+  })());
 });
-
-self.addEventListener('activate',e=>{
-  e.waitUntil(
-    caches.keys()
-      .then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))
-      .then(()=>self.clients.claim())
-  );
+self.addEventListener('activate', event => {
+  event.waitUntil((async () => {
+    const keys = await caches.keys();
+    await Promise.all(keys.filter(key => key.startsWith('master-pt-') && key !== CACHE).map(key => caches.delete(key)));
+    await self.clients.claim();
+  })());
 });
-
-self.addEventListener('fetch',e=>{
-  if(e.request.method!=='GET')return;
-  if(e.request.mode==='navigate'){
-    e.respondWith(
-      fetch(e.request,{cache:'no-store'})
-        .then(resp=>{const copy=resp.clone();caches.open(CACHE).then(c=>c.put('./index.html',copy));return resp;})
-        .catch(()=>caches.match('./index.html'))
-    );return;
+self.addEventListener('fetch', event => {
+  const request = event.request;
+  if (request.method !== 'GET') return;
+  const url = new URL(request.url);
+  if (url.origin !== self.location.origin) return;
+  if (request.mode === 'navigate' || url.pathname.endsWith('/index.html')) {
+    event.respondWith((async () => {
+      try {
+        const response = await fetch(request, {cache:'no-store'});
+        if (response.ok) {
+          const cache = await caches.open(CACHE);
+          await cache.put('./index.html', response.clone());
+        }
+        return response;
+      } catch (err) {
+        return (await caches.match('./index.html')) || Response.error();
+      }
+    })());
+    return;
   }
-  e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).then(resp=>{const copy=resp.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));return resp;})));
+  event.respondWith((async () => {
+    const cached = await caches.match(request);
+    if (cached) return cached;
+    try {return await fetch(request)} catch(err) {return Response.error()}
+  })());
 });
+// MASTER PT v1.6 deployment revision
