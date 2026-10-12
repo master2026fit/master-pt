@@ -1,5 +1,4 @@
-MASTER PT v1.9.22: focused date header crops and raw OCR diagnostic logs. Verify date against original before saving. Do not clear app data.
-
-Version 1.9.23: Calendar and list toggle for exercise history. Existing localStorage records unchanged.
-
-오늘 날짜 초록 테두리/오늘 라벨, 선택 날짜 파란색, 운동 기록 파란 점 유지.
+MASTER PT v1.9.25 - 운동 기구 사진 등록 및 사용법 팝업
+기존 v1.9.24의 기록, 달력, 인바디 기능 유지.
+사진은 사용자 기기에 저장되며 JSON 백업에 포함됩니다.
+반드시 master-pt 저장소에만 업로드하세요. master-prayer에는 업로드하지 마세요.
