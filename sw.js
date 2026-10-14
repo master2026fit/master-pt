@@ -1,6 +1,6 @@
-// MASTER PT v1.9.57 service worker
+// MASTER PT v1.9.58 service worker
 // Network-first for HTML so GitHub updates are shown immediately; offline fallback kept.
-const CACHE='master-pt-app-shell-v1-9-57';
+const CACHE='master-pt-app-shell-v1-9-58';
 
 self.addEventListener('install',event=>{
   event.waitUntil((async()=>{
